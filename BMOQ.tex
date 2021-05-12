@@ -1,0 +1,882 @@
+\documentclass[cn,11pt,chinese]{elegantbook}
+\usepackage{subfig}
+\usepackage{varioref} %vref 命令，定位引用
+\usepackage{float}
+\title{知识整理：生物光子学}
+\subtitle{材料、机理、文献}
+
+\author{吴天翔}
+\institute{BMO-Q's Lab}
+%\date{}
+%\version{3.11}
+\bioinfo{最后更新}{\zhtoday}
+
+\extrainfo{温柔正确的人总是难以生存，因为这世界既不温柔，也不正确。—— 比企谷八幡}
+
+\logo{logo-blue.png}
+\cover{cover.jpg}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+\chapter*{特别声明}
+\markboth{Introduction}{前言}
+
+这篇笔记用来记录我在科研过程中听过的与生物光子学相关的名词、材料、机理等，特别是第一次遇到时，觉得困惑的内容。
+
+希望文中的任何内容不会造成误解和冲突，所有整理的资料仅供参考，用于帮助自己缓解平时交流或组会中，
+遇到听不懂的词、遇到想查的资料时，可以速览定义或性质。所以，这篇笔记更偏向于课题组内的常用知识记录和速览。
+
+最重要的是，督促自己阅读、整理文献资料。
+\begin{center}
+ \underline{笔记会持续更新，直到我离开此科研方向。}
+\end{center}
+
+保持热情，认真科研。
+\vskip 1.5cm
+
+\begin{flushright}
+Tianxiang Wu\\
+April 28, 2021
+\end{flushright}
+
+\tableofcontents
+%\listofchanges
+
+\mainmatter
+\chapter{荧光材料及其性质}
+
+\section{ICG}
+
+\begin{proposition}{ICG}{ICG}
+indocyanine green ,ICG,吲哚菁绿，微溶于水，溶解度1mg/mL，分子量774.96
+\end{proposition}
+待补充。
+
+
+\section{AIE-4号}
+\begin{proposition}{AIE4}{AIE4}
+？
+\end{proposition}
+？待补充
+
+
+\section{AIE-5号}
+\begin{proposition}{OTPA-BBT}{OTPA-BBT}
+  octyloxy‐substituted triphenyl amine (OTPA) and benzobisthiadiazole (BBT)，
+OTPA-BBT QDs，一种AIE量子点。
+
+组内叫AIE-5号材料。可用F127、PEG等包覆。PEG包覆的AIE-5号量子点荧光峰值波长1020 nm，NIR-II PLQY 高达13.6\%。
+\end{proposition}
+
+\begin{note}
+  PLQY:光致发光量子产率，详见名词\vref{thm:PLQY}。
+\end{note}
+材料详细特征见图~\vref{fig:AIE-5}。
+\begin{figure}[ht]
+	\centering
+	\subfloat[材料分子]{\includegraphics[height=.25\columnwidth]{figure/AIE5/AIE5.png}} \quad
+	\subfloat[吸收光谱]{\includegraphics[height=.25\columnwidth]{figure/AIE5/AIE5ABS.png}} \\
+	\subfloat[积分发射光谱]{\includegraphics[height=.3\columnwidth]{figure/AIE5/AIE5EM.png}} \quad
+  \subfloat[激发光与荧光发射波长]{\includegraphics[height=.3\columnwidth]{figure/AIE5/AIE5EE.png}}
+	\caption{AIE-5号材料特征} 
+	\label{fig:AIE-5}
+\end{figure}
+
+\section{2F}
+\begin{proposition}{IDSe-IC2F}{IDSe-IC2F}
+  IDSe-IC2F 分子材料，可用PEG包覆成量子点。
+  
+  吸收峰在700-800 nm左右，可以用793 nm激光器有效激发。发射峰在1000 nm左右，荧光有近红外二区拖尾。
+  材料详细特征见图~\vref{fig:2F}。
+\end{proposition}
+
+\begin{figure}[ht]
+	\centering
+	\subfloat[材料分子]{\includegraphics[height=.3\columnwidth]{figure/chapter1/2F/2F.png}} \\
+	\subfloat[吸收光谱]{\includegraphics[height=.25\columnwidth]{figure/chapter1/2F/2FABS.png}} \quad
+	\subfloat[发射光谱]{\includegraphics[height=.25\columnwidth]{figure/chapter1/2F/2FEMM.png}} 
+	\caption{2F材料特征} 
+	\label{fig:2F}
+\end{figure}
+
+\section{3T}
+TT3？待补充。
+
+\chapter{常见机理}
+
+\section{荧光共振能量转移(FRET)}
+
+\begin{definition}{FRET}{FRET} 
+  荧光共振能量转移是指在两个不同的荧光基团中，如果一个荧光基团（供体 Donor）的发射光谱与另一个基
+  团（受体 Acceptor）的吸收光谱有一定的重叠，当这两个荧光基团间的距离合适时（一般小于100Å），
+  就可观察到荧光能量由供体向受体转移的现象，即以前一种基团的激发波长激发时，可观察到后一个基团发射的荧光。简单地说，
+  就是在供体基团的激发状态下由一对偶极子介导的能量从供体向受体转移的过程，此过程没有光子的参与，所以是非辐射的，供体分子被激发后，
+  当受体分子与供体分子相距一定距离，且供体和受体的基态及第一电子激发态两者的振动能级间的能量差相互适应时，
+  处于激发态的供体将把一部分或全部能量转移给受体，使受体被激发，在整个能量转移过程中，不涉及光子的发射和重新吸收。
+  如果受体荧光量子产率为零，则发生能量转移荧光熄灭；如果受体也是一种荧光发射体，则呈现出受体的荧光，并造成次级荧光光谱的红移。
+\end{definition}
+
+\section{EPR效应}
+
+\begin{definition}{高渗透长滞留效应}{EPR} 
+  EPR效应是指一些特定大小的大分子物质（如脂质体、纳米颗粒以及一些大分子药物）更容易渗透进入肿瘤组织并长期滞留（和正常组织相比）的现象。
+  对此常见的解释是，肿瘤细胞为了能够快速地生长，需要更多的养料和氧气，故会分泌血管内皮生长因子等与肿瘤血管生成有关的生长因子。
+  特别是当肿瘤达到150-200微米大小时，会高度依赖于肿瘤血管的养料和氧气供应。此时新生成的肿瘤血管在结构与形态上与正常的血管有很大的不同。
+  其内皮细胞间隙较大，缺少血管壁平滑肌层，血管紧张素受体功能缺失。另外，肿瘤组织也缺少淋巴管致使淋巴液回流受阻。
+  这两者造成了大分子物质可以方便地穿过过血管壁在肿瘤组织中富集，且不被淋巴液回流带走而能长期存于肿瘤组织，
+  故称为实体瘤的“高渗透长滞留效应”（EPR）。EPR效应可被一些病理生理因素进一步提高，
+  如刺激肿瘤血管舒张的物质缓激肽、一氧化氮、过氧亚硝酸根离子、前列腺素、血管内皮生长因子、肿瘤坏死因子等。
+  另外，肿瘤部位的淋巴细胞减少也会增加大分子物质在这里的滞留效应。
+\end{definition}
+
+
+
+
+
+\chapter{常见英文缩写、名词解析}
+%--------------------------------------------------------------------------------------%
+\section{A、B、C、D}
+
+\begin{theorem}{ACQ}{ACQ}
+  Aggregation-Caused Quenching，聚集荧光淬灭。
+\end{theorem}
+
+\begin{theorem}{ADC}{ADC}
+  analogue-to-digital conversion，模数转换。
+  
+  我们常常在相机中见到这一参数，它表示将模拟信号转换为数字信号的位深，也就是图像的最大位深。
+  在编写代码读取该相机的RAW格式图片时，可能需要提供此参数。
+
+  要用代码读取RAW图片，可以参见下面的Matlab代码。
+\end{theorem}
+\definecolor{codegreen}{rgb}{0.007,0.5019,0.035}
+\definecolor{stringred}{rgb}{0.66,0.015,0.97}
+\lstset{
+  commentstyle = \color{codegreen},
+  stringstyle=\color{stringred},
+}
+\begin{lstlisting}[language=Matlab]
+  % matlab code:open a RAW file
+  col = 640;
+  row = 512;
+  %Filepath contians file name,e.g.'\figure\test.raw'.
+  fid = fopen(Filepath,'r'); 
+  A = fread(fid,[col,row],'uint16'); % Raw data saved in matrix A.
+  fclose(fid);
+  A = uint16(A);
+  A = A';
+\end{lstlisting}
+
+\begin{theorem}{AIE}{AIE}
+  Aggregation-Induced Emission，聚集诱导发光。
+\end{theorem}
+
+\begin{theorem}{ASF}{ASF}
+  Anti-Stokes fluorescence,反斯托克斯荧光。
+
+  反斯托克斯发光过程将长波长激发转化为较短波长的发射，几种典型的ASF过程见图\footnote{图片勘误：图中上能级1实际是多个能级，会发生弛豫，因此发射光子能量会小于入射光子总能量。}~\vref{fig:ASF}。
+\end{theorem}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[height = .4\columnwidth]{figure/chapter3/HBA.jpg}
+  \caption{典型反斯托克斯发光过程}
+  \label{fig:ASF}
+\end{figure}
+
+\begin{theorem}{BBB}{BBB} 
+Blood Brain Barrier，血脑屏障。
+
+血脑屏障是指脑毛细血管壁与神经胶质细胞形成的血浆与脑细胞之间的屏障和由脉络丛形成的血浆和脑脊液之间的屏障，
+这些屏障能够阻止某些物质（多半是有害的）由血液进入脑组织。血液中多种溶质从脑毛细血管进入脑组织，有难有易；有些很快通过，
+有些较慢，有些则完全不能通过，这种有选择性的通透现象使人们设想可能有限制溶质透过的某种结构存在，
+这种结构可使脑组织少受甚至不受循环血液中有害物质的损害，从而保持脑组织内环境的基本稳定，对维持中枢神经系统正常生理状态具有重要的生物学意义。
+\end{theorem}
+
+\begin{theorem}{CBD}{CBD}
+Common Bile Duct,总胆管。
+\end{theorem}
+
+\begin{theorem}{CT}{CT}
+ Computed X-ray Tomography，X光计算机断层扫描成像。
+  \end{theorem}
+
+
+\begin{theorem}{DLS}{DLS}
+Dynamic Light Scattering，动态光散射。
+
+其也称作光子相关光谱或准弹性光散射，是一种物理表征手段，用来测量溶液或悬浮液中的粒径分布，也可以用来测量如高分子浓溶液等复杂流体的行为。
+\end{theorem}
+
+\begin{theorem}{DMLP}{DMLP}
+ 	Long-Pass Dichroic Mirror，长通二向色镜。
+  \end{theorem}
+
+\begin{theorem}{DMSO}{DMSO}
+  Dimethyl sulfoxide，二甲基亚砜，用作有机溶剂。
+
+  常温下为无色无臭的透明液体，是一种吸湿性的可燃液体。具有高极性、高沸点、热稳定性好、非质子、与水混溶的特性，能溶于乙醇、丙醇、苯和氯仿等大多数有机物
+  ，是一种“万能溶剂”。
+  \end{theorem}
+%--------------------------------------------------------------------------------------%
+\section{E、F、G、H}
+\begin{theorem}{EPR}{EPR} 
+  Enhanced Permeability and Retention effect，EPR效应，高渗透长滞留效应。
+
+ \end{theorem}
+ \begin{note}
+   EBR效应机理见\vref{def:EPR}。
+ \end{note}
+
+\begin{theorem}{EL}{EL} 
+ Electroluminescence (EL)，电致发光。 
+
+ Electroluminescence (EL) quantum efficiency  电致发光量子效率。
+\end{theorem}
+
+\begin{theorem}{EXO}{EXO} 
+  Exosome，外泌体。指直径在40-100nm的盘状囊泡，包含了复杂 RNA 和蛋白质的小膜泡 (30-150nm)，可用于包覆材料。
+\end{theorem}
+
+\begin{theorem}{FBS}{FBS} 
+  Fetal Bovine Serum，胎牛血清。
+
+\end{theorem}  
+
+\begin{theorem}{FDA}{FDA} 
+  Food and Drug Administration,美国食品药品监督管理局。
+\end{theorem}
+
+\begin{theorem}{F-127}{F-127} 
+  表面活性剂Pluronic F-127，用于包覆材料，使其具有水溶性。
+\end{theorem}
+
+\begin{theorem}{FRET}{FRET} 
+Fluorescence Resonance Energy Transfer，荧光共振能量转移。
+\end{theorem}
+\begin{note}
+FRET机理见\vref{def:FRET}。
+\end{note}
+
+\begin{theorem}{FWHM}{FWHM} 
+  Full Width at Half Maxima,半高全宽，指（光谱等）峰高一半处的峰宽度。
+  
+  示意图见图~\ref{fig:FWHM}。
+  \end{theorem}
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[height=.3\columnwidth]{figure/chapter3/FWHM.png}
+    \caption{FWHM示意图}
+    \label{fig:FWHM}
+  \end{figure}
+  
+\begin{theorem}{HBA}{HBA} 
+  Hot-Band Absorption ，热带吸收。
+
+  热带吸收是反斯托克斯发光的一种过程，可参见词条ASF在名词~\vref{thm:ASF}，能级图见图~\vref{fig:ASF}。
+  \end{theorem}
+
+
+  
+  \begin{theorem}{HSA}{HSA} 
+  	Human Serum Albumin ，人血清蛋白。
+    \end{theorem}
+  
+
+%--------------------------------------------------------------------------------------%
+\section{I、J、K、L、M、N}
+
+\begin{theorem}{LN}{LN} 
+  Lymph Node，淋巴结。
+   \end{theorem}
+
+\begin{theorem}{MPA}{MPA} 
+Multi-Photon Absorption，多光子吸收。
+ \end{theorem}
+
+ \begin{theorem}{MRI}{MRI} 
+  Magnetic Resonance Imaging,核磁共振成像。
+   \end{theorem}
+
+\begin{theorem}{NIR}{NIR} 
+ Near Infrared，近红外波段。
+\end{theorem}
+
+\begin{table}[!htb]
+  \centering
+  \caption{组内定义的波段命名}
+    \begin{tabular}{cc||cc}
+    \hline
+    \textbf{名称} & \textbf{对应波段} & \textbf{名称} & \textbf{对应波段}  \\
+    \hline
+    NIR-I  & 700-900 nm & NIR-IIa & 900-1400 nm     \\  
+    NIR-II  & 900-1880 nm & NIR-IIx & 1400-1500 nm     \\  
+    NIR-III  & 2080-2340 nm & NIR-IIb & 1500-1700 nm     \\  
+    -  & - & NIR-IIc & 1700-1880 nm     \\  
+    \hline
+    \end{tabular}%
+  \label{tab:NIR}%
+\end{table}%
+
+
+\begin{remark}
+  冯哲师兄原文：
+\end{remark}
+There mainly exist four absorption peaks in the spectra within 700-2500 nm, which are located at ~980 nm, 
+~1200 nm, ~1450 nm and ~1930 nm, respectively. As is widely known to all, the 360-760 nm is defined as visual region, 
+thus NIR region should start with 760 nm. Traditional bio-imaging window is usually located in NIR-I region, 
+which is ranging from 760 nm to 900 nm. The water absorption of photons significantly improves beyond 900 nm, 
+compared with NIR-I. Meanwhile, the tissue scattering decreases with the increase of wavelength. 
+The mainstream belief among scientists is that the suppressed scattering occupies a dominant position in the high-quality 
+NIR-II imaging and they generally believe signals weakened by water absorption is defective for deep detection. However, 
+it was found that moderate water absorption could improve image contrast\cite{Carr2018,Tanzid2016}, since the background with longer optical path to 
+detect would be intensely attenuated despite the signal reduction. After some verification, we considered that the water absorption 
+is of the essence for the improvement of NIR-II imaging technology. Because of the absorption peak at ~980 nm, 900-1000 nm
+ should not be excluded from the second near-infrared window for bio-imaging. The high absorption of photons within 1400-1500 nm 
+ is no longer the barrier in NIR-II region, as long as the imaging probes possess enough emission to resist the attenuation by water,
+  as shown in Figure 1（图~\vref{fig:NIRa}）. Besides, region of 1700-1880 nm could not be ignored since the its water absorption and low tissue scattering. 
+  Hence, we perfected the NIR-II window as 900-1880 nm and we newly defined the 1400-1500 nm and 1700-1880 nm as NIR-IIx region and NIR-IIc region (图~\vref{fig:NIRb}). It could be calculated that the peak absorption intensity at ~1930 nm is near $e^{100}$ times higher than the peak at ~1450 nm for every 1 cm of transmission, thus the useful signals with the wavelengths near 1930 nm would be almost impossible to detect in deep tissue. After the absorption “mountain” peaking at ~1930 nm, the region of 2080-2340 nm, which was considered as the third near infrared (NIR-III) region by us, becomes the last high-potential bio-window in general because the water absorption of light beyond 2340 nm keeps stubbornly high.
+
+\begin{figure}[h]
+	\centering
+	\subfloat[原文figure1]{\includegraphics[height=.25\columnwidth]{figure/extra/NIR1.jpg}\label{fig:NIRa}} \\
+  \subfloat[原文figure2]{\includegraphics[height=.25\columnwidth]{figure/extra/NIR2.jpg}\label{fig:NIRb}}
+  \caption{原文配图}
+	\label{fig:NIR}
+\end{figure}
+
+  %--------------------------------------------------------------------------------------%
+\section{O、P、Q}
+
+\begin{theorem}{OD}{OD} 
+ Optical Density，光密度。
+ 
+ 在这个术语最一般的意义上，光密度测量一个物体吸收了多少光以及有多少光穿过了这个物体，
+ 光密度用于确定构成物体的材料类型，是材料遮光能力的表征。吸收越大，OD值越高。
+
+ 由下式计算：
+ $$OD = \lg \frac{{{I_0}}}{{{I_t}}} = \lg \frac{1}{T}$$
+ 其中$I_0$是入射光，$I_t$是透射光，$T$是指透过率。
+ 如果入射光通过材料的透射率为0.1，那么它的OD值就是1。  OD数值可以参考表~\vref{tab:OD}。
+\end{theorem}
+
+
+\begin{table}[h]
+  \centering
+  \caption{OD值参考表}
+    \begin{tabular}{cc|cc}
+    \hline
+    \textbf{光密度值} & \textbf{透过率} & \textbf{光密度值} & \textbf{透过率}  \\
+    \hline
+      0.01  & 97\% & 0.05 & 89\%     \\  
+     0.02  & 95\% & 0.07 & 85\%     \\ 
+     0.03  & 93\% & 0.08 & 83\%     \\
+     0.04  & 91\% & 0.09 & 81\%     \\
+     \hline
+     \hline
+      0.1  & 79\% & 1 & 10\%     \\
+        0.2  & 63\% & 1.2 & 6\%     \\
+        0.4  & 39\% & 1.5 & 3\%     \\
+        0.7  & 19\% & 2 & 1\%     \\
+        0.9  & 12\% & 3 & 0.1\%     \\
+    \hline
+    \end{tabular}%
+  \label{tab:OD}%
+\end{table}%
+
+\begin{theorem}{PAMP}{PAMP}
+  Pathogen-Associated Molecular Patterns，病原体相关分子模式。
+
+  病原微生物表面存在一些人体宿主所没有的，但可为许多相关微生物所共享，结构恒定且进化保守的分子结构，
+  称为病原体相关分子模式（PAMP）,固有免疫识别的PAMP，往往是病原体赖以生存，因而变化较少的主要部分，
+  如病毒的双链RNA和细菌的脂多糖，对此，病原体很难产生突变而逃脱固有免疫的作用。
+\end{theorem}
+
+
+\begin{theorem}{PBS}{PBS}
+  Phosphate Buffered Saline,磷酸盐缓冲液。
+  \end{theorem}
+
+\begin{theorem}{PLA}{PLA}
+  Polylactic Acid（PLA），聚乳酸，又称聚丙交酯，是以乳酸为主要原料聚合得到的聚酯类聚合物，是一种新型的生物降解材料。
+
+  在禁塑令生效后，PLA也被用于制作吸管。可以用于包覆材料。
+  \end{theorem}
+
+  \begin{theorem}{PTI}{PTI}
+    \begin{enumerate}
+      \item Pattern-Triggered Immunity,（植物的）模式触发免疫。
+      \item Photo Thrombotic Ischemia,光致血栓性缺血。
+    \end{enumerate}
+    
+\end{theorem}
+
+\begin{theorem}{PLQY}{PLQY}
+Photoluminescence Quantum Yield，光致发光量子产率。
+
+光致发光量子产率可以表征样品的发光效率,即测量样品有效利用吸收光的效率,数学上可以表示为发射光子数和吸收光子数的比值。
+测量样品的量子产率有两种方法:相对量子产率测量和绝对量子产率测量。
+相对量子产率方法需要一种已知量子产率的标准品作为参照,通过对标准物和样品进行吸光度和荧光的测量换算得到样品的量子产率。
+但是相对量子产率只适用于液体样品。
+\end{theorem}
+
+\begin{note}
+QY见\vref{thm:QY}，EL见\vref{thm:EL}
+\end{note}
+
+
+\begin{theorem}{PTT}{PTT}
+  Photothermal Therapy,光热疗法
+\end{theorem}
+
+\begin{theorem}{PDT}{PDT}
+  Photodynamic Therapy,光动力疗法。
+
+  通过光敏剂将吸收的光能有效地转化为局部高温或产生有毒的活性氧(ROS)，从而杀死癌细胞。
+\end{theorem}
+\begin{note}
+  ROS见\vref{thm:ROS}。
+\end{note}
+
+\begin{theorem}{PEG}{PEG} 
+  Polyethylene Glycol，聚乙二醇。
+
+  一种双极性分子，用于包覆材料，使其具有水溶性。
+  PEG可诱导水溶液中大分子的聚集。
+\end{theorem}
+
+\begin{theorem}{PRR}{PRR}
+  Pattern Recognition Receptor,模式识别受体。
+
+  是一类主要表达于固有免疫细胞表面、非克隆性分布、可识别一种或多种PAMP的识别分子。
+\end{theorem}
+
+\begin{theorem}{QE}{QE} 
+Quantum Efficiency,量子效率。
+
+量子效率是对光敏器件电光敏性的一种测量。光活性表面利用来自入射光子的能量来产生电子-空穴对，光子的能量增加了电子的能级，
+使电子离开了价带，电子被束缚在单个原子上，并进入导带，在那里它可以自由地穿过材料的整个原子晶格。
+光子在撞击光活性表面时产生电子-空穴对的百分比越高，量子效率越高。
+\end{theorem}
+
+\begin{theorem}{QY}{QY} 
+  Quantum Yield,材料的量子产率，指材料出射光子数与吸收光子数的比值，由于是光子数的比值，出射与入射光子能量可以不同，
+  所以量子产率理论上可以大于1。
+\end{theorem}
+%--------------------------------------------------------------------------------------%
+\section{R、S、T}
+\begin{theorem}{RAW}{RAW} 
+  RAW 264.7,一种巨噬细胞。
+  
+  是常用的研究炎症或者巨噬细胞行为的模型，为小鼠腹腔巨噬细胞系。
+\end{theorem} 
+
+\begin{theorem}{ROS}{ROS} 
+  Reactive Oxygen Species,活性氧，一种激发态的氧分子。
+  
+  即一重态氧分子或称单线态氧分子(O$_2$);
+
+  3种含氧的自由基, 
+  即超氧阴离子自由基(O-2)、羟自由基(·OH)和氢过氧自由基(HO$_2$);
+
+  2种过氧化物, 
+  即过氧化氢(H$_2$O$_2$)和过氧化脂质(ROOH)以及一种含氮的氧化物(NO)等。
+  
+  这些物质\textbf{化学反应活性强、存在寿命短},
+  如O-2的平均寿命为2 $\mu$s,·OH 自由基200 $\mu$s 、O-2 自由基5 s。
+\end{theorem} 
+
+\begin{theorem}{SBR}{SBR} 
+Signal to Background Ratios ,信号背景比，信背比。
+
+\end{theorem} 
+
+ 
+\begin{theorem}{SWIR}{SWIR} 
+  短波红外（Short-wave infrared，简称SWIR）一般指900-1700 nm的光波段，是肉眼不
+  可见的红外光波段。
+  \end{theorem} 
+\begin{note}
+  NIR及其波段命名见\vref{thm:NIR}。
+\end{note}
+
+\begin{theorem}{SLN}{SLN} 
+  Sentinel Lymph Nodes ,前哨淋巴结。
+  \end{theorem} 
+
+
+  \begin{theorem}{TADF}{TADF} 
+    Thermally Activated Delayed Fluorescence，热活性型延迟荧光。
+    \end{theorem}  
+
+
+\begin{theorem}{TCSPC}{TCSPC} 
+  Time-Correlated Single-Photon Counting，时间相关单光子计数。
+\end{theorem}  
+
+\begin{theorem}{TEM}{TEM} 
+  Transmission Electron Microscope，透射电子显微镜。
+\end{theorem}  
+
+\begin{theorem}{Tekwin}{Tekwin} 
+  Tekwin，(西安)天盈光电。国产短波红外相机生产厂家和供应商。
+\end{theorem}  
+
+\begin{theorem}{THF}{THF} 
+Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
+\end{theorem}  
+
+\begin{remark}
+甲醇是极性质子溶剂(甲醇的醇羟基氢有一定的电离能力)，可以给出质子，既可以做氢键供体也可以做氢键受体(O原子)。四氢呋喃是极性非质子溶剂，
+只能结合质子，不能给出质子，只能做氢键的受体，不能做供体。
+\end{remark}
+
+\begin{theorem}{TEOS}{TEOS} 
+  Tetraethyl orthosilicate,正硅酸乙酯，有机物。
+  
+  能与乙醇和乙醚混溶，微溶于苯，几乎不溶于水，但能逐渐被水分解成氧化硅。
+  在潮湿空气中逐渐混浊、静置后析出硅酸沉淀。无水分存在时稳定，蒸馏时不分解。易燃。高浓度时有麻醉性。有刺激性。
+\end{theorem}  
+
+
+\begin{theorem}{TTA}{TTA} 
+  TTA,Triplet-Triplet Annihilation 三重态-三重态湮灭。
+ 
+ 简单来说，两个三重态的粒子，会生成一个基态和一个激发态的单重态，然后激发的单重态再发光。 
+\end{theorem}  
+
+%--------------------------------------------------------------------------------------%
+\section{U、V、W、X、Y、Z}
+
+\begin{theorem}{UCNP}{UCNP} 
+  Upconversion Fluorescence from Rare-earth doped Nanoparticles，稀土掺杂纳米颗粒的上转换荧光。
+  \end{theorem}  
+%--------------------------------------------------------------------------------------%
+\section{其他}
+
+\begin{theorem}{4T1}{4T1} 
+4T1，小鼠乳腺癌细胞。
+  \end{theorem}  
+
+  \begin{theorem}{戊巴比妥}{WBBT} 
+   戊巴比妥，镇静药物，麻醉剂。
+
+    巴比妥类药物的镇静，催眠和麻醉作用机理为抑制脑干网状结构上行激活系统所致，且具有高度选择性，对丘脑新皮层通路无抑制作用，故无镇痛作用。
+    戊巴比妥对呼吸和循环有显著的抑制作用。能使血液红，白细胞减少，血沉加快，延长血凝时间。苏醒期长，一般需6到8小时才能完全恢复。
+
+    用量：10～20mg/Kg体重。C57小鼠：1\%戊巴，$200 \mu l$。
+\end{theorem}  
+ 
+%-------------------------------------------------------------------------------------------------
+%----------------------------------------实验室仪器章节------------------------------------------------
+%-------------------------------------------------------------------------------------------------
+\chapter{实验室常用仪器与接口}
+
+%-----------------------------------------相机------------------------------------------------
+\section{相机和成像设备}
+\subsection{SW640短波红外相机}
+SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制冷，有效响应波段$900-1700\; nm$。
+相机控制和输出接口可全部采用USB，Gige和CameraLink。详细参数见表~\vref{tab:SW640}。
+\begin{table}[ht]
+  \centering
+  \caption{SW640性能指标}
+  \begin{tabular}{ccccc}
+    \toprule
+    探测器类型&光谱响应&像素数&像素大小&有效面积 \\
+    \midrule
+    InGaAs  &$900-1700 nm$&$640\times512$&$25\mu{}m$&$16\times12.8 mm^2$ \\
+    \toprule
+    相机接口&曝光时间&增益&相机尺寸&重量\\
+    \midrule
+    C \& M42 & $10\mu{}s\sim 1s$ & 高增益48dB&$110\times110\times110 mm$&1.7 kg\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:SW640}
+\end{table}
+
+\subsection{SD640短波红外相机}
+
+\begin{figure}[h]
+	\centering
+	\subfloat[SW640]{\includegraphics[height=.2\columnwidth]{figure/camera/SW640.png}} \quad
+	\subfloat[SD640]{\includegraphics[height=.2\columnwidth]{figure/camera/SD640.png}} \quad
+%	\subfloat[SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/SMA.jpg}} \quad
+%	\subfloat[RP-SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/RP-SMA.jpg}} \\
+	\caption{实验室常用相机} 
+	\label{fig:camera}
+\end{figure}
+%------------------------------------------显微镜--------------------------------------------------
+\section{显微镜系统}
+\subsection{}
+%----------------------------------------片型元件、透镜---------------------------------------------
+\section{滤光片、二向色镜与透镜}
+\subsection{滤光片}
+
+\subsection{二向色镜}
+
+\subsection{透镜}
+
+%------------------------------------------------接口----------------------------------------------
+\section{光机接口}
+此节主要总结实验中常用的光机接口，以便查询详细参数和购买时搜索使用。
+主要涉及放大器、寿命成像等应用中常用的BNC同轴电缆接口、SMA接口等。具体详见图~\Vref{fig:pin}。
+\begin{figure}[h]
+	\centering
+	\subfloat[BNC]{\includegraphics[height=.15\columnwidth]{figure/pins/BNC.jpg}} \quad
+	\subfloat[VGA]{\includegraphics[height=.15\columnwidth]{figure/pins/VGA.jpg}} \quad
+	\subfloat[SMA]{\includegraphics[height=.15\columnwidth]{figure/pins/SMA.jpg}} \quad
+	\subfloat[RP-SMA]{\includegraphics[height=.15\columnwidth]{figure/pins/RP-SMA.jpg}} \\
+	\caption{实验室常见接口} 
+	\label{fig:pin}
+\end{figure}
+
+\section{光纤接口}
+\begin{figure}[h]
+	\centering
+	\subfloat[SC接口]{\includegraphics[height=.15\columnwidth]{figure/pins/SC.jpg}} \quad
+	\subfloat[FC/PC接口]{\includegraphics[height=.15\columnwidth]{figure/pins/FCPC.jpg}}  \quad
+	\subfloat[APC接口]{\includegraphics[height=.15\columnwidth]{figure/pins/APC.jpg}}
+	\caption{常用光纤接口} 
+	\label{fig:fiber}
+\end{figure}
+
+%-------------------------------------------------------------------------------------------------
+%----------------------------------------文献阅读 章节------------------------------------------------
+%-------------------------------------------------------------------------------------------------
+\chapter{组内文献阅读}
+%-------------------------------------------------------------------------------------------------
+\section{Hot-band absorption of Indocyanine Green for advanced anti-Stokes fluorescence bioimaging}
+
+\begin{introduction}[创新点概要]
+  \item 验证了ICG的ASF
+  \item 此ASF比UCNPs更强
+  \item 利用L1057 NPs增加图像对比度
+  \item 用于脑血管断层成像和血流测速
+  \item 双通道成像手术导航
+\end{introduction}
+
+\begin{remark}
+  ICG在915 nm CW光激发下的热激发振动能级吸收引起的ASF。L1057 NPs的发射峰约1100 nm，其吸收光谱与ICG的荧光谱有重叠。
+\end{remark}
+
+\begin{note}
+  ASF，反斯托克斯荧光。详见名词~\vref{thm:ASF} ,ICG见材料~\vref{pro:ICG}。
+\end{note}
+
+\subsection{文中提及的数据及知识点}
+
+  \begin{enumerate}
+    \item ICG理论吸收峰在794 nm
+    \item 915 nm激发光下，ICG溶于DMSO全光谱荧光量子效率约13\%
+    \item 915 nm激发光下，800-900 nm的ASF量子效率约8\%
+    \item TADF荧光寿命在微秒量级
+    \item ICG光热使用1550 nm激发光照射，因为水吸收大
+    \item 元素：Tm（铥，Tm$^{3+}$，发音：$di\bar{u}$ ），Yb（镱,Yb$^{3+}$,发音：y$\grave{_1}$ ）,Y（钇，发音：y$\check{_1}$）
+  \end{enumerate}
+  
+\subsection{文章中解释的问题}
+ \begin{enumerate}[itemsep=1.5ex]
+   \item \question{如何验证ICG的上转换属于哪种机制？}
+   测量功率依赖关系和荧光寿命。经测量，DMSO溶液中的ICG（0.1mg/mL）对数功率依赖关系系数接近1，是线性过程，排除多光子吸收（MPA）。利用TCPSC测量荧光寿命，发现寿命约0.83 ns。而三重态寿命很长，所以排除TADF。同时测量热敏特性。温度升高时，长波长(910-920 nm)吸收增加，吸收最大值（794 nm）在降低。认为其应当是HBA过程。
+   \begin{note}
+     HBA，热带吸收。详见名词~\vref{thm:HBA}.
+   \end{note}
+   \item \question{在验证光热治疗中荧光强度变化时，为何要做对照实验？}
+   消除光漂白的影响，虽然实验中斯托克斯荧光强度随温度上升而下降，但也有可能是因为光漂白造成的荧光强度下降。所以不用光照情况下做对比实验。
+   \item \question{为什么要用ICG,不用稀土的上转换荧光？}
+  因为比起稀土，ICG的ASF要亮的多。（实验验证）
+
+
+ \end{enumerate} 
+
+\subsection{论文结构完整性}
+验证ICG的ASF，证明它比稀土更亮，并用它来做光热、脑血管断层成像和双通道手术导航。
+从发光机制、材料优势到创新应用，文章内容全面。
+
+\subsection{个人保留问题}
+
+\begin{enumerate}
+  \item 为什么文中只与稀土纳米颗粒上转换荧光做对比？
+  因为稀土是比较常用的上转换荧光材料。能级丰富，可以调谐发射波长。
+  \item 还有其他上转换材料用于成像吗？
+很多有机材料都有上转换荧光。
+\end{enumerate}
+
+%-------------------------------------------------------------------------------------------------
+\section{Re-exploring, perfecting and extending the near-infrared biological window}
+\begin{introduction}[创新点概要]
+  \item 修改了NIR-II波段的定义
+  \item 新定义了NIR-III波段
+  \item 确认水吸收对成像的积极作用\footnote{实验：小鼠全身成像，材料1450-CdS QDs@PEG水溶液}
+  \item NIR-III可能成为最佳成像窗口\footnote{对较亮的荧光团而言}
+  \item 1450 PdS/CdS 量子点用于子宫和膀胱成像
+\end{introduction}
+\begin{note}
+  NIR波段定义见名词~\vref{thm:NIR}。
+\end{note}
+\subsection{文中提及的数据和知识}
+\begin{enumerate}
+  \item 水吸收峰在$\sim$980 nm，$\sim$1200 nm，$\sim$1450 nm，$\sim$1930 nm。
+  \item 1450-PbS/CdS QD，发射波长位于1450 nm附近，用于验证1450 nm附近的成像效果。
+  \item 
+\end{enumerate}
+
+\subsection{文章中解释的问题}
+ \begin{enumerate}[itemsep=1.5ex]
+   \item \question{NIR-II从原来的1000-1700 nm修改至900-1880 nm，增加900-1000 nm和1700-1880 nm范围的原因是什么？}
+   首先说明水吸收对成像质量的积极影响，NIR-II波段的定义应该考虑水吸收的作用。由于在980 nm处有吸收峰，所以将900-1000 nm也划入NIR-II。另外，
+   经典探测器现有的探测波段限制了成像波段的在1700 nm以上的成像效果，
+   但是由于相似的吸收和散射系数，1700-1880 nm应该被划入NIR-II波段，命名为NIR-IIc。
+   \item \question{NIR-III的波段为何定义为 2080-2340 nm？}
+  首先，超过2340 nm之后的水吸收非常大，对成像的影响非常大。2080 nm之前，有一个水吸收峰，2080-2340 nm刚好是一个水吸收谷。
+  \begin{note}
+    水吸收系数详见图~\Vref{fig:waterabs}。
+  \end{note}
+ \end{enumerate} 
+
+\subsection{论文结构完整性}
+说明波段定义需要考虑吸收带来的积极效果，用仿真验证吸收的积极效果，进行实际的成像实验。提出定义、理论验证、实验验证，逻辑完整。
+
+\subsection{个人保留问题}
+
+\begin{enumerate}
+  \item 水吸收的积极作用只会在材料亮度足够时才能体现。如何定量衡量这一标准（如何判定足够亮）？或者说，当吸收可以对成像有积极作用时，材料亮度与吸收系数之间有什么样的对应关系？
+\end{enumerate}
+
+%--------------------------------------------------------------------------------------%
+
+\section{Biologically excretable AIE dots for visualizing through the marmosets intravitally: horizons in future clinical nanomedicine}
+
+\begin{introduction}[创新点概要]
+  \item 明亮的AIE-5号材料\footnote{OTPA-BBT量子点，详见材料\vref{pro:OTPA-BBT}。}
+  \item 材料可被代谢
+  \item 材料有NIR-IIb荧光
+  \item 进行了大深度脑血管成像
+  \item 血栓形成的检测
+  \item 猴的胃肠道成像
+  \item 使用FFT分析成像效果
+\end{introduction}
+本节内容是对文献\cite{Feng2021}的笔记。
+
+\subsection{文中提及的数据和知识}
+\begin{enumerate}
+  \item AIE-5号的内核是两组FRET材料对。
+\end{enumerate}
+\subsection{文章中解释的问题}
+\begin{enumerate}[itemsep=1.5ex]
+   \item \question{如何实现激光控制的血栓形成？}
+  文章中说明，在小鼠体内已经存在5号量子点的情况下，注射光敏剂，用532 nm的光持续照射2-3分钟，诱发模式免疫，使血小板聚集形成血栓，阻碍血流。这样形成的血栓可以被血流冲开，使血流恢复正常。
+  当光束面积缩小，能量密度提高时，血栓不易消除，60分钟后，观察到了血管增生和形态变化。
+   \item \question{5号的代谢情况如何？}
+口腔灌注或喂食，20分钟进入回肠，9小时到达结肠。在32小时后，荧光基本集中在粪便中。3天后，主要器官内荧光完全消失。
+ \end{enumerate} 
+
+\subsection{论文结构完整性}
+首先说明材料的优势在于很亮的NIR-IIb荧光，并且可以代谢，并将其用于狨猴的脑血管成像、血栓模型的监测和胃肠道成像。
+
+\subsection{个人保留问题}
+暂无。
+
+%-------------------------------------------------------------------------------------------------
+\section{Protein-Enhanced NIR-IIb Emission of Indocyanine Green for Functional Bioimaging}
+\begin{introduction}[创新点概要]
+  \item ICG在HSA中的NIR-II荧光增强
+  \item ICG在胆汁中的NIR-II荧光增强
+  \item ICG在FBS中的NIR-II荧光增强
+  \item 首次ICG的NIR-IIb体内成像
+\end{introduction}
+
+本节内容是对文献\cite{Hemubin2020}的笔记。
+
+\subsection{文中提及的数据和知识}
+\begin{enumerate}
+  \item 比起溶于水中，ICG溶在HSA中时，吸收峰比在重水中红移20 nm左右（778 nm $\to$ 803 nm）。
+\end{enumerate}
+
+\subsection{文章中解释的问题}
+\begin{enumerate}[itemsep=1.5ex]
+   \item \question{为什么溶解在HSA,FPS或大鼠胆汁中时，ICG的亮度会提高？}
+  文章中说明，ICG微溶于水，因此在水中容易聚集，导致荧光淬灭。但是当溶解于FBS，HSA（4\%）或者胆汁中时，ICG能够与其中的蛋白的疏水核心结合，可以防止ICG进一步聚集，提高其化学和光学稳定性。
+   \item \question{1？}
+口 
+ \end{enumerate} 
+%--------------------------------------------参考文献----------------------------------------------------------
+\bibliography{reference}
+
+\appendix
+%-----------------------------------------------附录---------------------------------------------------------%
+\chapter{文中相关数据}
+
+\section{散射和吸收系数数据}
+
+\subsection{水的吸收系数图}
+\begin{figure}[h]
+	\centering
+	\subfloat[400-2000 nm]{\includegraphics[width=.8\linewidth]{figure/waterabs.jpg}\label{fig:waterabs1}} \\
+  \subfloat[670-2500 nm]{\includegraphics[width=.8\linewidth]{figure/waterabs2.jpg}\label{fig:waterabs2}}
+  \caption{水吸收图谱}
+	\label{fig:waterabs}
+\end{figure}
+
+
+%-----------------------------------------------------------------------------------------------------------------%
+\chapter{实验室信息补充}
+
+\section{实验室地址信息}
+现代光学仪器国家重点实验室，浙江大学光电科学与工程学院国际先进光子学研究中心，光及电磁波研究中心。
+
+State Key Laboratory of Modern Optical Instrumentations, Centre for Optical and
+Electromagnetic Research, College of Optical Science and Engineering, International
+Research Center for Advanced Photonics, Zhejiang University, Hangzhou 310058, China
+
+%--------------------------------------------------------人员信息----------------------------------------------------%
+\chapter{课题组人员信息}
+\begin{table}[h]
+  \centering
+  \caption{BMO-Q课题组人员信息}
+\begin{tabular}{cccccc}
+\toprule
+学工号 & 姓名 & 培养类型 & 年级 &电话号码 \\
+\midrule
+& 钱骏	&——&	——	&13505815872 \\
+\hline
+\hline
+& 汪亚伦&	——&	——	&13957197989\\
+&阿卜杜热合曼·则比布拉&	——&	——	&15924110078\\
+&张鹤群&	博士生&	2013级直博	&15068149355\\
+&李东宇&	博士生	&2014级直博&	18768115548\\
+&努尔妮沙·阿力甫&	博士生&	2015级普博&	15925692249\\
+&朱亮&	博士生（联合培养）&	2017级直博	&15868181658\\
+&薛丁玮	&博士生（联合培养）	&2017级转博	&15700179920\\
+&吴迪&	博士生（联合培养）&	2017级普博&	18758198169\\
+&蒋旻晓&	博士生（联合培养）&	2017级直博&	18868106599\\
+&陈木雄	&博士生（联合培养）&	2017级转博&	15067149704\\
+&周静	&博士生	&2018级直博&	18888763019\\
+&何木斌&	博士生&	2018级直博&	17816890181\\
+&虞文斌	&硕士生&	2016级&	15157340927\\
+&余晓明	&硕士生（联合培养）&	2016级	&18268136649\\
+11930004&冯哲&	博士生&	2019级转博 &	18530193366\\
+21730046&蔡朝冲&	硕士生&	2017级&	13291899389\\
+&王槐岚	&硕士生（联合培养）&	2017级	&18868111993\\
+12130003&倪沪桅	&博士生&	2021级转博&	18868109583\\
+12030008&	陈润泽& 博士生&2020级转博&18667948563\\
+21930074&张浴煌&硕士生&2019级& 13269325513\\
+22030040	&吴天翔& 硕士生&2020级& 15051305530\\
+22030026  &彭士屹&硕士生 &2020级 &13981804293 \\
+
+\bottomrule
+\end{tabular}%
+\label{tab:info}%  
+
+\end{table}
+
+
+\end{document}
