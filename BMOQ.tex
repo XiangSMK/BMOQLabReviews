@@ -294,6 +294,10 @@ FRET机理见\vref{def:FRET}。
 %--------------------------------------------------------------------------------------%
 \section{I、J、K、L、M、N}
 
+\begin{theorem}{IRF}{IRF} 
+  Instrument Response Function,仪器响应函数。
+\end{theorem}
+
 \begin{theorem}{LN}{LN} 
   Lymph Node，淋巴结。
    \end{theorem}
@@ -578,7 +582,9 @@ Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
 %-------------------------------------------------------------------------------------------------
 %----------------------------------------实验室仪器章节------------------------------------------------
 %-------------------------------------------------------------------------------------------------
-\chapter{实验室常用仪器设备及元件}
+\chapter{实验室常用仪器、设备及元件}
+%-----------------------------------------激光器------------------------------------------------
+\section{激光器}
 
 %-----------------------------------------相机------------------------------------------------
 \section{相机和成像设备}
@@ -615,19 +621,77 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 \end{figure}
 %------------------------------------------显微镜--------------------------------------------------
 \section{显微镜系统}
-\subsection{OLYMPUS FV1200 }
+\subsection{OLYMPUS FV1200}
+奥林巴斯的\href{https://www.olympus-lifescience.com.cn/zh/laser-scanning/fv1200}{FV1200激光扫面显微系统}（已停产）。
+
+\subsection{Thorlabs 共聚焦显微镜}
+
 %----------------------------------------片型元件、透镜---------------------------------------------
 \section{滤光片、二向色镜与透镜}
 \subsection{滤光片}
+有关长通和短通滤光片的详细透过率参数，详见~\href{https://www.thorlabschina.cn/newgrouppage9.cfm?objectgroup_id=918}{Thorlabs 边通滤光片}。型号后有H的
+是高质量滤光片（例如短通滤光片EFSH1000），可见~\href{https://www.thorlabschina.cn/newgrouppage9.cfm?objectgroup_id=6082}{Thorlabs 优质硬膜边通滤光片}。
+
+
+\begin{table}[ht]
+  \centering
+  \caption{滤光片数量统计}
+  \begin{tabular}{cc|cc|cc}
+    \toprule
+    长通&数量&短通&数量&带通&数量 \\
+    \midrule
+    700LP & 1     & 500SP & 1     & 330-385 & 2 \\
+    750LP & 1     & 650SP & 1     & 450-650 & 1 \\
+    785LP & 1     & 700SP & 1     & 470-495 & 2 \\
+    800LP & 2     & 750SP & 1     & 510-550 & 1 \\
+    850LP & 1     & 800SP & 1     & 530-550 & 1 \\
+    900LP & 2     & 850SP & 1     & 750-960 & 1 \\
+    950LP & 1     & 900SP & 3     &       &  \\
+    1000LP & 2     & 945SP & 1     &       &  \\
+    1100LP & 4     & 950SP & 2     &       &  \\
+    1200LP & 1     & 1000SP & 1     &       &  \\
+    1300LP & 1     & 1075SP & 2     &       &  \\
+    1400LP & 1     & 1300SP & 1     &       &  \\
+    1450LP & 1     & 1500SP & 7     &       &  \\
+    1500LP & 1     &       &       &       &  \\
+
+
+    \bottomrule
+  \end{tabular}
+  \label{tab:filter}
+\end{table}
 
 \subsection{二向色镜}
+有关二向色镜的详细参数，详见~\href{https://www.thorlabschina.cn/newgrouppage9.cfm?objectgroup_id=3313}{Thorlabs 长波通二向色镜/分束器}和
+\href{https://www.thorlabschina.cn/newgrouppage9.cfm?objectgroup_id=9240}{Thorlabs 短波通二向色镜/分束器}。
+
+\begin{table}[htbp]
+  \centering
+  \caption{二向色镜统计}
+    \begin{tabular}{cc|cc}
+      \toprule
+    DMLP  & 数量    & DMSP  & 数量 \\
+    \midrule
+    633   & 1     & 660   & 1 \\
+    660   & 1     & 900   & 1 \\
+    805   & 1     & 950   & 1 \\
+    900   & 2     & 1100  & 1 \\
+    1150  & 1     & 1500  & 1 \\
+    1180  & 1     &       &  \\
+    1500  & 1     &       &  \\
+    
+    \bottomrule
+    \end{tabular}%
+  \label{tab:DM}%
+\end{table}%
 
 \subsection{透镜}
 
 %------------------------------------------------接口----------------------------------------------
-\section{光机接口}
+\section{接口}
 此节主要总结实验中常用的光机接口，以便查询详细参数和购买时搜索使用。
 主要涉及放大器、寿命成像等应用中常用的BNC同轴电缆接口、SMA接口等。具体详见图~\Vref{fig:pin}。
+光纤接口等见图~\vref{fig:fiber}。
 \begin{figure}[h]
 	\centering
 	\subfloat[BNC]{\includegraphics[height=.15\columnwidth]{figure/pins/BNC.jpg}} \quad
@@ -638,7 +702,6 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 	\label{fig:pin}
 \end{figure}
 
-\section{光纤接口}
 \begin{figure}[h]
 	\centering
 	\subfloat[SC接口]{\includegraphics[height=.15\columnwidth]{figure/pins/SC.jpg}} \quad
@@ -805,8 +868,8 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 \begin{enumerate}[itemsep=1.5ex]
    \item \question{为什么溶解在HSA,FPS或大鼠胆汁中时，ICG的亮度会提高？}
   文章中说明，ICG微溶于水，因此在水中容易聚集，导致荧光淬灭。但是当溶解于FBS，HSA（4\%）或者胆汁中时，ICG能够与其中的蛋白的疏水核心结合，可以防止ICG进一步聚集，提高其化学和光学稳定性。
-   \item \question{1？}
-口 
+   \item \question{问题？}
+
  \end{enumerate} 
 %--------------------------------------------参考文献----------------------------------------------------------
 \bibliography{reference}
@@ -826,16 +889,13 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 	\label{fig:waterabs}
 \end{figure}
 
-
-%-----------------------------------------------------------------------------------------------------------------%
-\chapter{实验室信息补充}
-
 \section{实验室地址信息}
 现代光学仪器国家重点实验室，浙江大学光电科学与工程学院国际先进光子学研究中心，光及电磁波研究中心。
 
 State Key Laboratory of Modern Optical Instrumentations, Centre for Optical and
 Electromagnetic Research, College of Optical Science and Engineering, International
 Research Center for Advanced Photonics, Zhejiang University, Hangzhou 310058, China
+
 
 %--------------------------------------------------------人员信息----------------------------------------------------%
 \chapter{课题组人员信息}
@@ -861,7 +921,7 @@ Research Center for Advanced Photonics, Zhejiang University, Hangzhou 310058, Ch
 &陈木雄	&博士生（联合培养）&	2017级转博&	15067149704\\
 &周静	&博士生	&2018级直博&	18888763019\\
 &何木斌&	博士生&	2018级直博&	17816890181\\
-&虞文斌	&硕士生&	2016级&	15157340927\\
+&虞文斌	&硕士生&	2016级&	15157340927\\ 
 &余晓明	&硕士生（联合培养）&	2016级	&18268136649\\
 11930004&冯哲&	博士生&	2019级转博 &	18530193366\\
 21730046&蔡朝冲&	硕士生&	2017级&	13291899389\\
