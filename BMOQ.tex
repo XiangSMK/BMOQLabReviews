@@ -298,6 +298,15 @@ FRET机理见\vref{def:FRET}。
   Instrument Response Function,仪器响应函数。
 \end{theorem}
 
+\begin{theorem}{kDa}{kDa} 
+  kDa，千道尔顿。在生物化学、分子生物学和蛋白组学中经常用于表示蛋白质等生物大分子。
+
+Dal全称道尔顿（Dalton），是分子量常用单位，就是将分子中所有原子按个数求原子量的代数和。
+人们为了纪念道尔顿，以他的名字作为原子质量单位（Dalton，Dal,Da，D）。
+
+道尔顿（Da）在数值上等于相对分子质量，1kDa表示相对分子质量为1000的分子。
+\end{theorem}
+
 \begin{theorem}{LN}{LN} 
   Lymph Node，淋巴结。
    \end{theorem}
@@ -522,6 +531,14 @@ Signal to Background Ratios ,信号背景比，信背比。
     \end{theorem}  
 
 
+\begin{theorem}{TCA}{TCA} 
+  水合氯醛，代号TCA,2A类致癌物，用作麻醉剂。
+
+  水合氯醛为催眠药、抗惊厥药。催眠剂量30分钟内即可诱导入睡，催眠作用温和，不缩短REMS睡眠，无明显后遗作用。
+  催眠机理可能与巴比妥类相似，引起近似生理性睡眠，无明显后作用。较大剂量有抗惊厥作用，可用于小儿高热、破伤风及子癎引起的惊厥。
+  大剂量可引起昏迷和麻醉。抑制延髓呼吸及血管运动中枢，导致死亡。
+\end{theorem}  
+
 \begin{theorem}{TCSPC}{TCSPC} 
   Time-Correlated Single-Photon Counting，时间相关单光子计数。
 \end{theorem}  
@@ -584,8 +601,29 @@ Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
 %-------------------------------------------------------------------------------------------------
 \chapter{实验室常用仪器、设备及元件}
 %-----------------------------------------激光器------------------------------------------------
-\section{激光器}
+\section{激光器和光源}
+此节列出组内可以使用的光源。包含激光器和其他照明光源。
+\begin{figure}[ht]
+	\centering
+	\subfloat[450 nm激光器]{\includegraphics[height=.2\columnwidth]{figure/device/450.JPG}} \quad
+	\subfloat[665 nm激光器]{\includegraphics[height=.2\columnwidth]{figure/device/665.JPG}} \quad
+%	\subfloat[SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/SMA.jpg}} \quad
+%	\subfloat[RP-SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/RP-SMA.jpg}} \\
+	\caption{可见光光源} 
+	\label{fig:source:visible}
+\end{figure}
 
+\begin{figure}[ht]
+	\centering
+	\subfloat[793 nm激光器]{\includegraphics[height=.2\columnwidth]{figure/device/793.JPG}} \quad
+	\subfloat[915 nm激光器]{\includegraphics[height=.2\columnwidth]{figure/device/915.JPG}} \quad
+  \subfloat[966 nm激光器]{\includegraphics[height=.2\columnwidth]{figure/device/966.JPG}} \quad
+  \subfloat[1064 nm激光器]{\includegraphics[height=.2\columnwidth]{figure/device/1064.JPG}} \quad
+%	\subfloat[SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/SMA.jpg}} \quad
+%	\subfloat[RP-SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/RP-SMA.jpg}} \\
+	\caption{红外光源} 
+	\label{fig:source:NIR}
+\end{figure}
 %-----------------------------------------相机------------------------------------------------
 \section{相机和成像设备}
 \subsection{SW640短波红外相机}
@@ -610,7 +648,7 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 
 \subsection{SD640短波红外相机}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\subfloat[SW640]{\includegraphics[height=.2\columnwidth]{figure/camera/SW640.png}} \quad
 	\subfloat[SD640]{\includegraphics[height=.2\columnwidth]{figure/camera/SD640.png}} \quad
@@ -690,7 +728,8 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 %------------------------------------------------接口----------------------------------------------
 \section{接口}
 此节主要总结实验中常用的光机接口，以便查询详细参数和购买时搜索使用。
-主要涉及放大器、寿命成像等应用中常用的BNC同轴电缆接口、SMA接口等。具体详见图~\Vref{fig:pin}。
+主要涉及放大器、寿命成像等应用中常用的BNC同轴电缆接口、SMA接口等。
+光机接口具体见图~\vref{fig:pin}。
 光纤接口等见图~\vref{fig:fiber}。
 \begin{figure}[h]
 	\centering
