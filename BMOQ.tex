@@ -20,6 +20,8 @@
 \usepackage{array}
 \newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
 
+\setsansfont{Verdana}%无衬线字体
+
 \begin{document}
 
 \maketitle
@@ -208,6 +210,11 @@ Common Bile Duct,总胆管。
  Computed X-ray Tomography，X光计算机断层扫描成像。
   \end{theorem}
 
+
+\begin{theorem}{DAI}{DAI}
+ Disease Activity Index，疾病活动指数。
+
+\end{theorem}
 
 \begin{theorem}{DLS}{DLS}
 Dynamic Light Scattering，动态光散射。
@@ -418,6 +425,10 @@ is of the essence for the improvement of NIR-II imaging technology. Because of t
   Phosphate Buffered Saline,磷酸盐缓冲液。
   \end{theorem}
 
+\begin{theorem}{P-dots}{P-dots}
+    polymer dots。聚合物点。
+\end{theorem}
+
 \begin{theorem}{PLA}{PLA}
   Polylactic Acid（PLA），聚乳酸，又称聚丙交酯，是以乳酸为主要原料聚合得到的聚酯类聚合物，是一种新型的生物降解材料。
 
@@ -532,7 +543,7 @@ Signal to Background Ratios ,信号背景比，信背比。
 
 
 \begin{theorem}{TCA}{TCA} 
-  水合氯醛，代号TCA,2A类致癌物，用作麻醉剂。
+  水合氯醛，代号TCA，2A类致癌物，用作麻醉剂。
 
   水合氯醛为催眠药、抗惊厥药。催眠剂量30分钟内即可诱导入睡，催眠作用温和，不缩短REMS睡眠，无明显后遗作用。
   催眠机理可能与巴比妥类相似，引起近似生理性睡眠，无明显后作用。较大剂量有抗惊厥作用，可用于小儿高热、破伤风及子癎引起的惊厥。
@@ -731,7 +742,7 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 主要涉及放大器、寿命成像等应用中常用的BNC同轴电缆接口、SMA接口等。
 光机接口具体见图~\vref{fig:pin}。
 光纤接口等见图~\vref{fig:fiber}。
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\subfloat[BNC]{\includegraphics[height=.15\columnwidth]{figure/pins/BNC.jpg}} \quad
 	\subfloat[VGA]{\includegraphics[height=.15\columnwidth]{figure/pins/VGA.jpg}} \quad
@@ -741,7 +752,7 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 	\label{fig:pin}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\subfloat[SC接口]{\includegraphics[height=.15\columnwidth]{figure/pins/SC.jpg}} \quad
 	\subfloat[FC/PC接口]{\includegraphics[height=.15\columnwidth]{figure/pins/FCPC.jpg}}  \quad
@@ -901,6 +912,9 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 \subsection{文中提及的数据和知识}
 \begin{enumerate}
   \item 比起溶于水中，ICG溶在HSA中时，吸收峰比在重水中红移20 nm左右（778 nm $\to$ 803 nm）。
+\begin{note}
+  HSA，人血清。详见名词~\vref{thm:HSA}。
+\end{note}
 \end{enumerate}
 
 \subsection{文章中解释的问题}
@@ -920,12 +934,23 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 \section{散射和吸收系数数据}
 
 \subsection{水的吸收系数图}
-\begin{figure}[h]
+水在可见光几乎没有吸收。在近红外，吸收系数开始震荡增加，在980，1450，1910处有局部吸收峰。详见图~\vref{fig:waterabs}。
+\begin{figure}[ht]
 	\centering
 	\subfloat[400-2000 nm]{\includegraphics[width=.8\linewidth]{figure/waterabs.jpg}\label{fig:waterabs1}} \\
   \subfloat[670-2500 nm]{\includegraphics[width=.8\linewidth]{figure/waterabs2.jpg}\label{fig:waterabs2}}
   \caption{水吸收图谱}
 	\label{fig:waterabs}
+\end{figure}
+
+\subsection{油脂吸收与散射系数}
+油脂也是活体生物的重要组成部分，其光学参数对成像有较大影响。油脂的吸收和散射系数见图~\vref{fig:adipose}。
+\begin{figure}[htp]
+	\centering
+	\subfloat[吸收系数]{\includegraphics[width=.8\linewidth]{figure/extra/adipose_mua.png}\label{fig:adiposeabs}} \\
+  \subfloat[散射系数]{\includegraphics[width=.8\linewidth]{figure/extra/adipose_mus.png}\label{fig:adiposesca}}
+  \caption{油脂光学参数}
+	\label{fig:adipose}
 \end{figure}
 
 \section{实验室地址信息}
@@ -970,6 +995,8 @@ Research Center for Advanced Photonics, Zhejiang University, Hangzhou 310058, Ch
 21930074&张浴煌&硕士生&2019级& 13269325513\\
 22030040	&吴天翔& 硕士生&2020级& 15051305530\\
 22030026  &彭士屹&硕士生 &2020级 &13981804293 \\
+&耿伟航&硕士生&2021级&\\
+&牟宣杰&硕士生&2021级&\\
 
 \bottomrule
 \end{tabular}%
