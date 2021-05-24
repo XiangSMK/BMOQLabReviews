@@ -2,6 +2,7 @@
 \usepackage{subfig}
 \usepackage{varioref} %vref 命令，定位引用
 \usepackage{float}
+\usepackage{colortbl}%table 颜色
 \title{知识整理：生物光子学}
 \subtitle{材料、机理、文献}
 
@@ -285,6 +286,12 @@ FRET机理见\vref{def:FRET}。
     \label{fig:FWHM}
   \end{figure}
   
+
+  
+\begin{theorem}{GFP}{GFP} 
+  Green Fluorescent Protein，绿色荧光蛋白。
+  \end{theorem}
+
 \begin{theorem}{HBA}{HBA} 
   Hot-Band Absorption ，热带吸收。
 
@@ -736,12 +743,16 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 
 \subsection{透镜}
 
+\section{准直器}
+准直器透过率数据:
+
+
 %------------------------------------------------接口----------------------------------------------
 \section{接口}
 此节主要总结实验中常用的光机接口，以便查询详细参数和购买时搜索使用。
 主要涉及放大器、寿命成像等应用中常用的BNC同轴电缆接口、SMA接口等。
 光机接口具体见图~\vref{fig:pin}。
-光纤接口等见图~\vref{fig:fiber}。
+光纤接口等见图~\vref{fig:fiber}。值得注意的是，FC的接口是平的，APC接口是倾斜的。选择接口时，需搭配对应光纤头使用。
 \begin{figure}[ht]
 	\centering
 	\subfloat[BNC]{\includegraphics[height=.15\columnwidth]{figure/pins/BNC.jpg}} \quad
