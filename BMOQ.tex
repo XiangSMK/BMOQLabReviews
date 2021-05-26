@@ -644,6 +644,17 @@ Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
 \end{figure}
 %-----------------------------------------相机------------------------------------------------
 \section{相机和成像设备}
+
+\begin{figure}[ht]
+	\centering
+	\subfloat[SW640]{\includegraphics[height=.2\columnwidth]{figure/camera/SW640.png}} \quad
+	\subfloat[SD640]{\includegraphics[height=.2\columnwidth]{figure/camera/SD640.png}} \quad
+	\subfloat[SD320-EX]{\includegraphics[height=.2\columnwidth]{figure/camera/SW320-EX.JPG}} \quad
+	\subfloat[GA1280]{\includegraphics[height=.2\columnwidth]{figure/camera/GA1280.JPG}} \\
+	\caption{实验室常用相机} 
+	\label{fig:camera}
+\end{figure}
+
 \subsection{SW640短波红外相机}
 SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制冷，有效响应波段$900-1700\; nm$。
 相机控制和输出接口可全部采用USB，Gige和CameraLink。详细参数见表~\vref{tab:SW640}。
@@ -666,15 +677,29 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 
 \subsection{SD640短波红外相机}
 
-\begin{figure}[ht]
-	\centering
-	\subfloat[SW640]{\includegraphics[height=.2\columnwidth]{figure/camera/SW640.png}} \quad
-	\subfloat[SD640]{\includegraphics[height=.2\columnwidth]{figure/camera/SD640.png}} \quad
-%	\subfloat[SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/SMA.jpg}} \quad
-%	\subfloat[RP-SMA接口]{\includegraphics[height=.25\columnwidth]{figure/pins/RP-SMA.jpg}} \\
-	\caption{实验室常用相机} 
-	\label{fig:camera}
-\end{figure}
+\subsection{SW320-EX短波红外扩展版相机}
+
+\subsection{GA1280近红外宽谱段相机}
+GA1280相机的光谱响应$400-2000\; nm$，像素数$1280\times1024$。
+
+\begin{table}[ht]
+  \centering
+  \caption{GA1280性能指标}
+  \begin{tabular}{ccccc}
+    \toprule
+    探测器类型&光谱响应&像素数&像素大小&有效面积 \\
+    \midrule
+    InGaAs  &$900-1700 nm$&$640\times512$&$25\mu{}m$&$16\times12.8 mm^2$ \\
+    \toprule
+    相机接口&曝光时间&增益&相机尺寸&重量\\
+    \midrule
+    C \& M42 & $10\mu{}s\sim 1s$ & 高增益48dB&$110\times110\times110 mm$&1.7 kg\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:GA1280}
+\end{table}
+
+
 %------------------------------------------显微镜--------------------------------------------------
 \section{显微镜系统}
 \subsection{OLYMPUS FV1200}
@@ -710,8 +735,8 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
     1400LP & 1     & 1300SP & 1     &       &  \\
     1450LP & 1     & 1500SP & 7     &       &  \\
     1500LP & 1     &       &       &       &  \\
-
-
+    1700LP & 1     &       &       &       &  \\
+    2000LP & 2     &       &       &       &  \\
     \bottomrule
   \end{tabular}
   \label{tab:filter}
@@ -742,10 +767,9 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
 \end{table}%
 
 \subsection{透镜}
-
+透镜统计工作将在6月进行。\hypertarget{fig1}{超接连目标测试}.
 \section{准直器}
-准直器透过率数据:
-
+准直器统计工作将在6月进行。\hyperlink{fig1}{超链接测试}。
 
 %------------------------------------------------接口----------------------------------------------
 \section{接口}
