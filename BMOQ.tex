@@ -644,19 +644,25 @@ Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
 \end{figure}
 %-----------------------------------------相机------------------------------------------------
 \section{相机和成像设备}
+\begin{introduction}[相机快速跳转]
+  \item \hyperlink{txt:SW640}{SW640短波红外相机}
+  \item \hyperlink{txt:SD640}{SD640短波红外相机}
+  \item \hyperlink{txt:SW320}{SW320-EX扩展版相机}
+  \item \hyperlink{txt:GA1280}{GA1280近红外宽谱段相机}
+\end{introduction}
 
 \begin{figure}[ht]
 	\centering
 	\subfloat[SW640]{\includegraphics[height=.2\columnwidth]{figure/camera/SW640.png}} \quad
 	\subfloat[SD640]{\includegraphics[height=.2\columnwidth]{figure/camera/SD640.png}} \quad
-	\subfloat[SD320-EX]{\includegraphics[height=.2\columnwidth]{figure/camera/SW320-EX.JPG}} \quad
+	\subfloat[SW320-EX]{\includegraphics[height=.2\columnwidth]{figure/camera/SW320-EX.JPG}} \quad
 	\subfloat[GA1280]{\includegraphics[height=.2\columnwidth]{figure/camera/GA1280.JPG}} \\
-	\caption{实验室常用相机} 
+	\caption{实验室常用的天盈光电相机} 
 	\label{fig:camera}
 \end{figure}
 
 \subsection{SW640短波红外相机}
-SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制冷，有效响应波段$900-1700\; nm$。
+\hypertarget{txt:SW640}{SW640}是西安天盈光电生产的高分辨率短波红外相机。采用TEC制冷，有效响应波段$900-1700\; nm$。
 相机控制和输出接口可全部采用USB，Gige和CameraLink。详细参数见表~\vref{tab:SW640}。
 \begin{table}[ht]
   \centering
@@ -667,21 +673,22 @@ SW640是西安天盈光电生产的高分辨率短波红外相机。采用TEC制
     \midrule
     InGaAs  &$900-1700 nm$&$640\times512$&$25\mu{}m$&$16\times12.8 mm^2$ \\
     \toprule
-    相机接口&曝光时间&增益&相机尺寸&重量\\
+    相机接口&曝光时间&ADC&相机尺寸&重量\\
     \midrule
-    C \& M42 & $10\mu{}s\sim 1s$ & 高增益48dB&$110\times110\times110 mm$&1.7 kg\\
+    C \& M42 & $10\mu{}s\sim 1s$ & 12 bit\footnote{相机说明中标称是12 bit，但实测读取时可能是16 bit。若以12 bit读取出错，请尝试以16 bit读取。}&$110\times110\times110 mm$&1.7 kg\\
     \bottomrule
   \end{tabular}
   \label{tab:SW640}
 \end{table}
 
 \subsection{SD640短波红外相机}
+\hypertarget{txt:SD640}{SD640短波红外相机}
 
 \subsection{SW320-EX短波红外扩展版相机}
+\hypertarget{txt:SW320}{SW320-EX短波红外扩展版相机}
 
 \subsection{GA1280近红外宽谱段相机}
-GA1280相机的光谱响应$400-2000\; nm$，像素数$1280\times1024$。
-
+\hypertarget{txt:GA1280}{GA1280相机}的光谱响应$400-1200\; nm$，像素数$1280\times1024$。在$700\sim1000\;nm$处$QE≥50\%$。
 \begin{table}[ht]
   \centering
   \caption{GA1280性能指标}
@@ -689,11 +696,11 @@ GA1280相机的光谱响应$400-2000\; nm$，像素数$1280\times1024$。
     \toprule
     探测器类型&光谱响应&像素数&像素大小&有效面积 \\
     \midrule
-    InGaAs  &$900-1700 nm$&$640\times512$&$25\mu{}m$&$16\times12.8 mm^2$ \\
+    InGaAs  &$400-1200 nm$&$1280\times1024$&$10\ \mu{}m$&$12.8\times10.2\; mm^2$ \\
     \toprule
     相机接口&曝光时间&增益&相机尺寸&重量\\
     \midrule
-    C \& M42 & $10\mu{}s\sim 1s$ & 高增益48dB&$110\times110\times110 mm$&1.7 kg\\
+    C口 & $20\ \mu{}s\sim 25\;ms$ & 12 bit&$44.5\times46.7\times37.2 mm$&140 g\\
     \bottomrule
   \end{tabular}
   \label{tab:GA1280}
