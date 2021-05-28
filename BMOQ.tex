@@ -646,6 +646,7 @@ Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
 \section{相机和成像设备}
 \begin{introduction}[相机快速跳转]
   \item \hyperlink{txt:SW640}{SW640短波红外相机}
+  \item \hyperlink{txt:SH640}{SH640短波红外相机}
   \item \hyperlink{txt:SD640}{SD640短波红外相机}
   \item \hyperlink{txt:SW320}{SW320-EX扩展版相机}
   \item \hyperlink{txt:GA1280}{GA1280近红外宽谱段相机}
@@ -682,10 +683,32 @@ Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
 \end{table}
 
 \subsection{SD640短波红外相机}
-\hypertarget{txt:SD640}{SD640短波红外相机}
+\hypertarget{txt:SD640}{SD640短波红外相机}，没有在网络上查找到相关信息。
+
+
+\subsection{SH640短波红外相机}
+\hypertarget{txt:SH640}{SH640}是天盈光电一款小型高性能短波红外相机。显著特征是拥有非常低的最低探测亮度\footnote{最低探测功率密度约$1.1\times10^{-5}mW/cm^2$}。
+\begin{table}[ht]
+  \centering
+  \caption{SH640性能指标}
+  \begin{tabular}{ccccc}
+    \toprule
+    探测器类型&光谱响应&像素数&像素大小&有效面积 \\
+    \midrule
+    InGaAs  &$900-1700 nm$&$640\times512$&$15\ \mu{}m$&$12.8\times10.2\; mm^2$ \\
+    \toprule
+    相机接口&曝光时间&ADC&相机尺寸&重量\\
+    \midrule
+    C口 & $1\ \mu{}s\sim 1\;s$ & 14 bit&$50\times50\times44 mm$&$\leqslant$220 g\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:SH640}
+\end{table}
+
 
 \subsection{SW320-EX短波红外扩展版相机}
 \hypertarget{txt:SW320}{SW320-EX短波红外扩展版相机}
+
 
 \subsection{GA1280近红外宽谱段相机}
 \hypertarget{txt:GA1280}{GA1280相机}的光谱响应$400-1200\; nm$，像素数$1280\times1024$。在$700\sim1000\;nm$处$QE≥50\%$。
@@ -783,7 +806,7 @@ Tetrahydrofuran,四氢呋喃。可用作有机溶剂。
 此节主要总结实验中常用的光机接口，以便查询详细参数和购买时搜索使用。
 主要涉及放大器、寿命成像等应用中常用的BNC同轴电缆接口、SMA接口等。
 光机接口具体见图~\vref{fig:pin}。
-光纤接口等见图~\vref{fig:fiber}。值得注意的是，FC的接口是平的，APC接口是倾斜的。选择接口时，需搭配对应光纤头使用。
+光纤接口等见图~\vref{fig:fiber}。值得注意的是，FC/PC的接口是平的，APC接口是倾斜的。选择接口时，需搭配对应光纤头使用。
 \begin{figure}[ht]
 	\centering
 	\subfloat[BNC]{\includegraphics[height=.15\columnwidth]{figure/pins/BNC.jpg}} \quad
